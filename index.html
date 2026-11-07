@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101a2e">
+    <meta name="description" content="Digital MV - Medium Voltage Operations Management Portal">
+    <title>Digital MV | Operations Management</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app-wrapper">
+
+    <!-- TOP NAVBAR -->
+    <header class="top-navbar">
+
+        <div class="brand-section">
+            <div class="brand-logo">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div class="brand-info">
+                <h2>Digital MV</h2>
+                <span> ELECTRICAL SYSTEMS</span>
+            </div>
+        </div>
+
+        <nav class="top-navigation">
+            <a href="#" class="top-link active" onclick="go(1); return false;">
+                Dashboard
+            </a>
+
+            <a href="#" class="top-link" onclick="go(2); return false;">
+                Complaints
+            </a>
+
+            <a href="#" class="top-link" onclick="go(3); return false;">
+                Work Orders
+            </a>
+
+            <a href="#" class="top-link" onclick="go(4); return false;">
+                Stage Job Timer
+            </a>
+
+            <a href="#" class="top-link" onclick="go(5); return false;">
+                Visit Wizard
+            </a>
+
+            <a href="#" class="top-link" onclick="go(17); return false;">
+                Reports
+            </a>
+        </nav>
+
+        <div class="navbar-actions">
+
+            <button class="navbar-button manual-btn" onclick="go(21)">
+                <i class="fa-regular fa-file-lines"></i>
+                User Manual
+            </button>
+
+            <button class="navbar-button trace-btn" onclick="go(18)">
+                <i class="fa-solid fa-layer-group"></i>
+                Traceability
+            </button>
+
+            <button class="navbar-button intake-btn" onclick="go(2)">
+                <i class="fa-solid fa-plus"></i>
+                Public Intake
+            </button>
+
+            <button class="notification-button" onclick="toast('You have 1 demo notification')">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-count">1</span>
+            </button>
+
+            <div class="profile-section">
+                <div class="profile-avatar">F</div>
+
+                <select id="role" class="role-select" onchange="roleChanged()">
+                    <option>Fahad Al-Otaibi · Dispatcher Supervisor</option>
+                    <option>Field Engineer</option>
+                    <option>QCA / Store</option>
+                    <option>Manager / Auditor</option>
+                    <option>Administrator</option>
+                    <option>Public Reporter</option>
+                </select>
+
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div class="main-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-heading">
+                <span>OPERATIONAL MENU</span>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    CORE OPERATIONS
+                </div>
+
+                <div id="navlist"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    ENGINEERING &amp; QUALITY
+                </div>
+
+                <div id="navlist2"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    SPECIALIST WORKFLOWS
+                </div>
+
+                <div id="navlist3"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    GOVERNANCE &amp; PLATFORM
+                </div>
+
+                <div id="navlist4"></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    Demo Environment
+                </div>
+
+                <p>Digital MV Portal v1.0</p>
+                <small>Kanpri Technologies LLP</small>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div id="app"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<!-- JAVASCRIPT -->
+<script src="app.js"></script>
+
+</body>
+</html>
